@@ -14,6 +14,8 @@
       source-han-sans-japanese
       source-han-serif-japanese
       symbola
+      font-awesome
+      material-design-icons
       (nerdfonts.override {
         fonts = [
           "FiraCode"

@@ -43,7 +43,7 @@
     xdg-desktop-portal-hyprland
     xdg-desktop-portal-gtk
     dunst
-    waybar
+    unstable.waybar
     swaylock
     swaylock-effects
     swayidle
@@ -56,9 +56,20 @@
 
   home-manager.users.janle = {
     xdg.configFile = {
-      "rofi/config.rasi".source = ./rofi/config.rasi;
-      "rofi/colors.rasi".source = ./rofi/colors.rasi;
-      "rofi/fonts.rasi".source = ./rofi/fonts.rasi;
+      "hypr/hyprland.conf".source = ./hypr/hyprland.conf;
+      "hypr/hyprpaper.conf".source = ./hypr/hyprpaper.conf;
+      "hypr/scripts" = {
+        source = ./hypr/scripts;
+	recursive = true;
+      };
+      "rofi" = {
+        source = ./rofi;
+	recursive = true;
+      };
+      "waybar" = {
+        source = ./waybar;
+	recursive = true;
+      };
     };
   };
 }

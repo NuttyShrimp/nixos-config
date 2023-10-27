@@ -7,7 +7,7 @@
 
   networking.networkmanager = {
     enable = true;
-    wifi.backend = "iwd";
+    # wifi.backend = "iwd";
   };
   networking.wireless.enable = false;  # Enables wireless support via wpa_supplicant.
 

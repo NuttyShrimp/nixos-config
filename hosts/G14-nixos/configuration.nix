@@ -14,6 +14,7 @@
     ../../common/pipewire.nix
     ../../users
     ../../users/janle
+    ../../users/janle/desktop.nix
     ../../users/janle/hyprland
     ../../users/janle/yubikey.nix
   ];

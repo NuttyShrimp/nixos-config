@@ -8,7 +8,7 @@
       ./hm/configurations/go.nix
     ];
 
-    home.packages = [
+    home.packages = with pkgs; [
       ripgrep
       # comms
       slack
@@ -21,7 +21,9 @@
       evince
       spotify
       vscode
+      alacritty
       pavucontrol
+      lazygit
     ];
   };
 }
