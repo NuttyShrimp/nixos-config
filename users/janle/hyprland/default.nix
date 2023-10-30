@@ -56,6 +56,7 @@
 
   home-manager.users.janle = {
     xdg.configFile = {
+      "alacritty/alacritty.yml".source = ./alacritty.yml;
       "hypr/hyprland.conf".source = ./hypr/hyprland.conf;
       "hypr/hyprpaper.conf".source = ./hypr/hyprpaper.conf;
       "hypr/scripts" = {

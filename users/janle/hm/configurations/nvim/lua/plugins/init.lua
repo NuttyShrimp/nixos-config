@@ -12,17 +12,16 @@ return {
   {
     'neovim/nvim-lspconfig'
   },
-  {
-    "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
-  },
+  -- {
+  --   "nvim-treesitter/nvim-treesitter",
+  --   build = ":TSUpdate",
+  -- },
   {
     'nvim-tree/nvim-web-devicons'
   },
   {
     'nvimdev/lspsaga.nvim',
     dependencies = {
-      'nvim-treesitter/nvim-treesitter', -- optional
       'nvim-tree/nvim-web-devicons'      -- optional
     }
   },
@@ -90,9 +89,9 @@ return {
   { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
   {
     'nvim-treesitter/nvim-treesitter-context',
-    dependencies = {
-      'nvim-treesitter/nvim-treesitter',
-    }
+    -- dependencies = {
+    --   'nvim-treesitter/nvim-treesitter',
+    -- }
   },
   {
     'nvim-lua/plenary.nvim'
@@ -101,7 +100,7 @@ return {
     'nvim-telescope/telescope.nvim',
     dependencies = { 'nvim-lua/plenary.nvim' }
   },
-  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+  -- { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
   {
     "folke/trouble.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
