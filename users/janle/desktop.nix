@@ -5,7 +5,11 @@
 
   home-manager.users.janle = {
     imports = [
+      ./hm/configurations/git.nix
       ./hm/configurations/go.nix
+      ./hm/configurations/nvim.nix
+      ./hm/configurations/tmux.nix
+      ./hm/configurations/zsh.nix
     ];
 
     home.packages = with pkgs; [
@@ -24,6 +28,7 @@
       alacritty
       pavucontrol
       lazygit
+      tmux
     ];
   };
 }

@@ -12,6 +12,7 @@
     ../../common/networkmanager.nix
     ../../common/nvidia.nix
     ../../common/pipewire.nix
+    ../../common/zsh.nix
     ../../users
     ../../users/janle
     ../../users/janle/desktop.nix
