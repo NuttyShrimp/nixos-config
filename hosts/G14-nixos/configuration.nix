@@ -20,6 +20,10 @@
     ../../users/janle/yubikey.nix
   ];
 
+  environment.systemPackages = with pkgs; [
+    jetbrains-toolbox
+  ];
+
   nixpkgs.config.allowUnfree = true;
 
   services.supergfxd.enable = true;

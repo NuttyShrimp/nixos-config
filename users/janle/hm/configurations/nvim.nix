@@ -1,12 +1,20 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 {
   programs.neovim = {
     enable = true;
     vimAlias = true;
     vimdiffAlias = true;
+    extraPackages = with pkgs; [
+      tree-sitter
+      fzf
+      fd
+      unzip
+    ];
     plugins = with pkgs.vimPlugins; [
-      nvim-treesitter
-      nvim-treesitter.withAllGrammars
+      {
+        plugin = (nvim-treesitter.withAllGrammars);
+        type = "lua";
+      }
       telescope-fzf-native-nvim
     ];
   };

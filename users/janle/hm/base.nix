@@ -15,5 +15,7 @@
     killall
     htop
     wget
+    fzf
+    unzip
   ];
 }

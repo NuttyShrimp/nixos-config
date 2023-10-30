@@ -48,8 +48,8 @@
     swaylock-effects
     swayidle
     pcmanfm
+    nodejs_20
     unstable.polkit_gnome
-    unstable.asdf-vm
   ];
 
   security.pam.services.swaylock = {};

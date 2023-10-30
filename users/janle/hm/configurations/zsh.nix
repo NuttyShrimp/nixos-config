@@ -3,6 +3,7 @@
   programs.zsh = {
     enable = true;
     shellAliases = {
+      lg = "lazygit";
       gs = "git status";
       ga = "git add";
       gp = "git push";
