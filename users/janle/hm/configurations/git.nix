@@ -2,7 +2,7 @@
 {
   programs.git = {
     enable = true;
-    userName  = "NuttyShrimp";
+    userName = "NuttyShrimp";
     userEmail = "jan.lecoutere@hotmail.be";
     aliases = {
       l = "log --graph --oneline --decorate --all";

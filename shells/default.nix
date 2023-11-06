@@ -11,7 +11,7 @@
       name = "devshell";
       category = "general commands";
       help = "Run nix develop but with the current shell";
-      command = "nix develop -c $SHELL $@"
+      command = "nix develop -c $SHELL $@";
     }
   ];
   packages = [

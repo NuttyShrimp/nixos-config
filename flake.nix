@@ -35,78 +35,81 @@
     };
   };
 
-  outputs = inputs@{
-    nixpkgs,
-    nixpkgs-unstable,
-    nixos-hardware,
-    flake-utils,
-    home-manager,
-    home-manager-unstable,
-    agenix,
-    devshell,
-    ...
-  }: let
-    # pkgs = nixpkgs.legacyPackages."x86_64-linux";
+  outputs =
+    inputs@{ nixpkgs
+    , nixpkgs-unstable
+    , nixos-hardware
+    , flake-utils
+    , home-manager
+    , home-manager-unstable
+    , agenix
+    , devshell
+    , ...
+    }:
+    let
+      # pkgs = nixpkgs.legacyPackages."x86_64-linux";
 
-    overlay = final: prev: {
-      unstable = import nixpkgs-unstable {
-        system = prev.system;
-        inherit nixpkgs;
-        config.allowUnfree = true;
-      };
-    };
-
-    overlays = [
-      overlay
-      agenix.overlays.default
-      devshell.overlays.default
-    ];
-
-    mkMachine = extraModules:
-      nixpkgs.lib.nixosSystem rec {
-        system = "x86_64-linux";
-        modules = [
-          ({config, ...}: {
-            nixpkgs = {
-              inherit overlays;
-              config.allowUnfree = true;
-            };
-          })
-          agenix.nixosModules.age
-          home-manager.nixosModules.home-manager ({config, ...}: {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-          })
-          ./common
-        ] ++ extraModules;
+      overlay = final: prev: {
+        unstable = import nixpkgs-unstable {
+          system = prev.system;
+          inherit nixpkgs;
+          config.allowUnfree = true;
+        };
       };
 
-    lsShells = builtins.readDir ./shells;
-    shellFiles = builtins.filter (name: lsShells.${name} == "regular") (builtins.attrNames lsShells);
-    shellNames = builtins.map (filename: builtins.head (builtins.split "\\." filename)) shellFiles;
-    systemAttrs = flake-utils.lib.eachDefaultSystem (system:
-      let
-        pkgs = import inputs.nixpkgs-unstable { inherit overlays system; };
-        nameToValue = name: import (./shells + "/${name}.nix") { inherit pkgs inputs system; };
-      in
-      {
-        devShells = builtins.listToAttrs (builtins.map (name: { inherit name; value = nameToValue name; }) shellNames);
-      }
-    );
-
-  in systemAttrs // {
-    # devShells.x86_64-linux.default = pkgs.mkShell {
-    #   buildInputs = [
-    #     agenix.packages.x86_64-linux.agenix
-    #   ];
-    # };
-
-    nixosConfigurations = {
-      G14-nixos = mkMachine [
-    	./hosts/G14-nixos/configuration.nix
-	nixos-hardware.nixosModules.common-cpu-amd
-        nixos-hardware.nixosModules.asus-zephyrus-ga401
+      overlays = [
+        overlay
+        agenix.overlays.default
+        devshell.overlays.default
       ];
+
+      mkMachine = extraModules:
+        nixpkgs.lib.nixosSystem rec {
+          system = "x86_64-linux";
+          modules = [
+            ({ config, ... }: {
+              nixpkgs = {
+                inherit overlays;
+                config.allowUnfree = true;
+              };
+            })
+            agenix.nixosModules.age
+            home-manager.nixosModules.home-manager
+            ({ config, ... }: {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+            })
+            ./common
+          ] ++ extraModules;
+        };
+
+      lsShells = builtins.readDir ./shells;
+      shellFiles = builtins.filter (name: lsShells.${name} == "regular") (builtins.attrNames lsShells);
+      shellNames = builtins.map (filename: builtins.head (builtins.split "\\." filename)) shellFiles;
+      systemAttrs = flake-utils.lib.eachDefaultSystem (system:
+        let
+          pkgs = import inputs.nixpkgs-unstable { inherit overlays system; };
+          nameToValue = name: import (./shells + "/${name}.nix") { inherit pkgs inputs system; };
+        in
+        {
+          devShells = builtins.listToAttrs (builtins.map (name: { inherit name; value = nameToValue name; }) shellNames);
+        }
+      );
+
+    in
+    systemAttrs // {
+      # devShells.x86_64-linux.default = pkgs.mkShell {
+      #   buildInputs = [
+      #     agenix.packages.x86_64-linux.agenix
+      #   ];
+      # };
+
+      nixosConfigurations = {
+        G14-nixos = mkMachine [
+          ./hosts/G14-nixos/configuration.nix
+          nixos-hardware.nixosModules.common-cpu-amd
+          nixos-hardware.nixosModules.asus-zephyrus-ga401
+        ];
+      };
     };
-  };
 }

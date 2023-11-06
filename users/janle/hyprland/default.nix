@@ -10,8 +10,8 @@
     displayManager = {
       # Works with hyprland but crashes at first start
       gdm = {
-	enable = true;
- 	wayland = true;
+        enable = true;
+        wayland = true;
       };
       startx.enable = false;
     };
@@ -49,9 +49,10 @@
     swayidle
     pcmanfm
     unstable.polkit_gnome
+    gnome3.adwaita-icon-theme
   ];
 
-  security.pam.services.swaylock = {};
+  security.pam.services.swaylock = { };
 
   home-manager.users.janle = {
     xdg.configFile = {
@@ -60,15 +61,15 @@
       "hypr/hyprpaper.conf".source = ./hypr/hyprpaper.conf;
       "hypr/scripts" = {
         source = ./hypr/scripts;
-	recursive = true;
+        recursive = true;
       };
       "rofi" = {
         source = ./rofi;
-	recursive = true;
+        recursive = true;
       };
       "waybar" = {
         source = ./waybar;
-	recursive = true;
+        recursive = true;
       };
     };
   };

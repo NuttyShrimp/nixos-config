@@ -9,11 +9,11 @@
       "dunst/dunstrc".source = ./dunst/dunstrc;
       "dunst/assets" = {
         source = ./dunst/assets;
-	recursive = true;
+        recursive = true;
       };
       "dunst/scripts" = {
         source = ./dunst/scripts;
-	recursive = true;
+        recursive = true;
       };
     };
   };

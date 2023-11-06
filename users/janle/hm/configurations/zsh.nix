@@ -10,7 +10,7 @@
       gpf = "git psh --force-with-lease";
       gps = "git stash && git pull --rebase && git stash pop";
       pn = "pnpm";
-      tmuxt="tmux attach -t default || tmux new-session -A -s 0";
+      tmuxt = "tmux attach -t default || tmux new-session -A -s 0";
     };
     enableAutosuggestions = true;
     oh-my-zsh = {
