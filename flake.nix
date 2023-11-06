@@ -39,16 +39,16 @@
     nixpkgs,
     nixpkgs-unstable,
     nixos-hardware,
+    flake-utils,
     home-manager,
     home-manager-unstable,
     agenix,
     devshell,
     ...
   }: let
-    pkgs = nixpkgs.legacyPackages."x86_64-linux";
+    # pkgs = nixpkgs.legacyPackages."x86_64-linux";
 
     overlay = final: prev: {
-      nix = final.nixVersions.nix_2_16;
       unstable = import nixpkgs-unstable {
         system = prev.system;
         inherit nixpkgs;
@@ -56,16 +56,21 @@
       };
     };
 
+    overlays = [
+      overlay
+      agenix.overlays.default
+      devshell.overlays.default
+    ];
 
     mkMachine = extraModules:
       nixpkgs.lib.nixosSystem rec {
         system = "x86_64-linux";
         modules = [
           ({config, ...}: {
-            nixpkgs.config.allowUnfree = true;
-	    nixpkgs.overlays = [
-              overlay
-            ];
+            nixpkgs = {
+              inherit overlays;
+              config.allowUnfree = true;
+            };
           })
           agenix.nixosModules.age
           home-manager.nixosModules.home-manager ({config, ...}: {
@@ -75,12 +80,27 @@
           ./common
         ] ++ extraModules;
       };
-  in {
-    devShells.x86_64-linux.default = pkgs.mkShell {
-      buildInputs = [
-        agenix.packages.x86_64-linux.agenix
-      ];
-    };
+
+    lsShells = builtins.readDir ./shells;
+    shellFiles = builtins.filter (name: lsShells.${name} == "regular") (builtins.attrNames lsShells);
+    shellNames = builtins.map (filename: builtins.head (builtins.split "\\." filename)) shellFiles;
+    systemAttrs = flake-utils.lib.eachDefaultSystem (system:
+      let
+        pkgs = import inputs.nixpkgs-unstable { inherit overlays system; };
+        nameToValue = name: import (./shells + "/${name}.nix") { inherit pkgs inputs system; };
+      in
+      {
+        devShells = builtins.listToAttrs (builtins.map (name: { inherit name; value = nameToValue name; }) shellNames);
+      }
+    );
+
+  in systemAttrs // {
+    # devShells.x86_64-linux.default = pkgs.mkShell {
+    #   buildInputs = [
+    #     agenix.packages.x86_64-linux.agenix
+    #   ];
+    # };
+
     nixosConfigurations = {
       G14-nixos = mkMachine [
     	./hosts/G14-nixos/configuration.nix
