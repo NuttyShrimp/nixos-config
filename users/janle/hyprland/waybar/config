@@ -4,12 +4,8 @@
     "modules-left": ["custom/launcher", "cpu", "memory", "hyprland/workspaces"],
     "modules-right": ["tray", "network", "pulseaudio",  "backlight", "battery", "custom/lock", "clock", "custom/power-menu"],
     "hyprland/workspaces": {
-      "format": "{icon}",
+      "format": "{id}",
       "on-click": "activate",
-      "format-icons": {
-        "active": " 󰮯",
-        "default": "",
-      }
     },
     "hyprland/window": {
         "format": "{}"
@@ -25,7 +21,7 @@
 
     "cpu": {
       "interval": 10,
-      "format": " {}%",
+      "format": "󰄧 {}%",
       "max-length": 10,
       "on-click": "",
     },
@@ -46,7 +42,7 @@
         /* "format-wifi": "直", */
         "format-wifi": "{icon}",
         "format-ethernet": " ",
-        "format-disconnected": "睊",
+        "format-disconnected": "󰤭",
         "tooltip-format": "{essid}",
         "on-click": "~/.config/waybar/scripts/network/rofi-network-manager.sh",
         "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"],
@@ -54,9 +50,9 @@
 
     "pulseaudio": {
         "format": "{icon}",
-        "format-muted": "婢",
+        "format-muted": "󰝟",
         "format-icons": {
-            "default": ["", "", "墳"]
+            "default": ["", "", "󰕾"]
         },
         "on-click": "pavucontrol &"
     },

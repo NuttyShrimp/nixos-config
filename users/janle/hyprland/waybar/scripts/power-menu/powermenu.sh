@@ -9,9 +9,9 @@ uptime="`uptime -p | sed -e 's/up //g'`"
 host=`hostname`
 
 # Options
-shutdown=''
-reboot=''
-lock=''
+shutdown=' '
+reboot=' '
+lock=' '
 suspend=' '
 logout=' '
 yes=' '
@@ -88,11 +88,7 @@ case ${chosen} in
 		run_cmd --reboot
         ;;
     $lock)
-		if [[ -x '/usr/bin/betterlockscreen' ]]; then
-			betterlockscreen -l
-		elif [[ -x '/usr/bin/i3lock' ]]; then
-			i3lock
-		fi
+    swaylock
         ;;
     $suspend)
 		run_cmd --suspend
