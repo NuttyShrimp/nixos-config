@@ -67,12 +67,12 @@
       },
       "max-length": 20,
       "format": "{icon} ",
-      "format-warning": "{icon}",
-      "format-critical": "{icon}",
+      "format-warning": "{icon} {capacity}",
+      "format-critical": "{icon} {capacity}",
       "format-charging": "<span font-family='Font Awesome 6 Free'></span>",
       "format-plugged": "ﮣ", 
 
-      "format-alt": "{icon} {capacity}% {time}",
+      "format-alt": "{icon} {capacity}%",
       "format-full": "ﮣ", 
       "format-icons": ["󱊡", "󱊢", "󱊣"]
     },
