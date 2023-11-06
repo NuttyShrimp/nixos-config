@@ -72,7 +72,7 @@
       "format-charging": "<span font-family='Font Awesome 6 Free'></span>",
       "format-plugged": "ﮣ", 
 
-      "format-alt": "{icon} {time}",
+      "format-alt": "{icon} {capacity}% {time}",
       "format-full": "ﮣ", 
       "format-icons": ["󱊡", "󱊢", "󱊣"]
     },
