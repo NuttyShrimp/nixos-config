@@ -23,6 +23,9 @@
 
   environment.systemPackages = with pkgs; [
     jetbrains-toolbox
+    notion
+    rustup
+    nextcloud-client
   ];
 
   nixpkgs.config.allowUnfree = true;
