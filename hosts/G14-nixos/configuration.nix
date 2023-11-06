@@ -13,6 +13,7 @@
     ../../common/nvidia.nix
     ../../common/pipewire.nix
     ../../common/zsh.nix
+    ../../common/displaylink.nix
     ../../users
     ../../users/janle
     ../../users/janle/desktop.nix
