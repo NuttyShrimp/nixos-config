@@ -3,6 +3,8 @@
 {
   environment.systemPackages = with pkgs; [
     pavucontrol
+    pamixer
+    playerctl
   ];
   security.rtkit.enable = true;
   services.pipewire = {

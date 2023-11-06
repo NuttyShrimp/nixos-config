@@ -29,6 +29,9 @@
       pavucontrol
       lazygit
       tmux
+      qimgv
+      slurp
+      shotman
     ];
   };
 }

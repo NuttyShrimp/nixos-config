@@ -48,7 +48,6 @@
     swaylock-effects
     swayidle
     pcmanfm
-    nodejs_20
     unstable.polkit_gnome
   ];
 

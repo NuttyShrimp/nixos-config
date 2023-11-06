@@ -6,9 +6,9 @@
     isNormalUser = true;
     extraGroups = [
       "wheel"
-      "light"
+      "video"
+      "audio"
       "networkmanager"
-      "docker"
     ];
     group = "janle";
   };
