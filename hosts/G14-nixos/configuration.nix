@@ -22,10 +22,11 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    jetbrains-toolbox
     notion
     rustup
     nextcloud-client
+    unstable.jetbrains.datagrip
+    libreoffice
   ];
 
   nixpkgs.config.allowUnfree = true;
