@@ -9,6 +9,7 @@
       "video"
       "audio"
       "networkmanager"
+      "libvirtd"
     ];
     group = "janle";
   };

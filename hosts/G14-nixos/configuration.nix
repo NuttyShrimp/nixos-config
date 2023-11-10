@@ -14,6 +14,7 @@
     ../../common/pipewire.nix
     ../../common/zsh.nix
     ../../common/displaylink.nix
+    ../../common/qemu.nix
     ../../users
     ../../users/janle
     ../../users/janle/desktop.nix
