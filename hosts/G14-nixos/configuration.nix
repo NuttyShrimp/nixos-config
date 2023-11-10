@@ -7,6 +7,7 @@
     ../../common/bluetooth.nix
     ../../common/fonts.nix
     ../../common/fwupd.nix
+    ../../common/gc.nix
     ../../common/grub.nix
     ../../common/gpg.nix
     ../../common/mariadb.nix
