@@ -7,6 +7,7 @@
     imports = [
       ./hm/configurations/git.nix
       ./hm/configurations/go.nix
+      ./hm/configurations/gtk.nix
       ./hm/configurations/nvim.nix
       ./hm/configurations/tmux.nix
       ./hm/configurations/zsh.nix
@@ -24,7 +25,7 @@
       ansible
       evince
       spotify
-      vscode
+      unstable.vscode
       alacritty
       pavucontrol
       lazygit

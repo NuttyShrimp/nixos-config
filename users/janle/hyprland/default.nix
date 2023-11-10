@@ -47,9 +47,12 @@
     swaylock
     swaylock-effects
     swayidle
-    pcmanfm
     unstable.polkit_gnome
-    gnome3.adwaita-icon-theme
+    lxappearance
+    # File manager things
+    pcmanfm
+    shared-mime-info
+    lxmenu-data
   ];
 
   security.pam.services.swaylock = { };
