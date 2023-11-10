@@ -11,7 +11,7 @@ host=`hostname`
 # Options
 shutdown=' '
 reboot=' '
-lock=' '
+lock=''
 suspend=' '
 logout=' '
 yes=' '

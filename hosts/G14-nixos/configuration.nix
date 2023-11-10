@@ -9,6 +9,7 @@
     ../../common/fwupd.nix
     ../../common/grub.nix
     ../../common/gpg.nix
+    ../../common/mariadb.nix
     ../../common/networkmanager.nix
     ../../common/nvidia.nix
     ../../common/pipewire.nix

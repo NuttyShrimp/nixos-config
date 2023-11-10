@@ -88,7 +88,11 @@
       shellNames = builtins.map (filename: builtins.head (builtins.split "\\." filename)) shellFiles;
       systemAttrs = flake-utils.lib.eachDefaultSystem (system:
         let
-          pkgs = import inputs.nixpkgs-unstable { inherit overlays system; };
+          pkgs = import inputs.nixpkgs-unstable {
+            inherit overlays system;
+            config.allowUnfree = true;
+
+          };
           nameToValue = name: import (./shells + "/${name}.nix") { inherit pkgs inputs system; };
         in
         {
