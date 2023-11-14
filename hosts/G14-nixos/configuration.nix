@@ -8,12 +8,13 @@
     ../../common/fonts.nix
     ../../common/fwupd.nix
     ../../common/gc.nix
-    ../../common/grub.nix
+    # ../../common/grub.nix
     ../../common/gpg.nix
     ../../common/mariadb.nix
     ../../common/networkmanager.nix
     ../../common/nvidia.nix
     ../../common/pipewire.nix
+    ../../common/systemd-boot.nix
     ../../common/zsh.nix
     ../../common/displaylink.nix
     ../../common/qemu.nix
@@ -46,4 +47,14 @@
   networking.hostName = "G14-nixos"; # Define your hostname.
 
   services.tailscale.enable = true;
+
+  boot.loader.systemd-boot.extraEntries = {
+    "arch.conf" = ''
+      title   Arch Linux
+      linux   /boot/vmlinuz-linux
+      initrd  /boot/amd-ucode.img
+      initrd  /boot/initramfs-linux.img
+      options root="UUID=df305880-9944-4046-aef8-1f215aed9dc2"
+    '';
+  };
 }
