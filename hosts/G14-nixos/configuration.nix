@@ -30,7 +30,10 @@
     rustup
     nextcloud-client
     unstable.jetbrains.datagrip
+    unstable.jetbrains.ruby-mine
     libreoffice
+    krita
+    speedcrunch
   ];
 
   nixpkgs.config.allowUnfree = true;
