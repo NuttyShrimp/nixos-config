@@ -2,13 +2,13 @@
 
 down() {
 light -U 2
-brightness=$(light -g)
+brightness=$(light -G)
 dunstify -a "BRIGHTNESS" "Decreasing to $brightness%" -h int:value:"$brightness" -i ~/.config/dunst/assets/ui/brightness-low.svg -r 2593 -u normal
 }
 
 up() {
 light -A 2
-brightness=$(light -g)
+brightness=$(light -G)
 dunstify -a "BRIGHTNESS" "Increasing to $brightness%" -h int:value:"$brightness" -i ~/.config/dunst/assets/ui/brightness-high.svg -r 2593 -u normal
 }
 
