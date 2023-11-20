@@ -10,6 +10,7 @@
       "audio"
       "networkmanager"
       "libvirtd"
+      "docker"
     ];
     group = "janle";
   };

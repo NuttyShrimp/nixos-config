@@ -5,6 +5,7 @@
     ./hardware-configuration.nix
     ../../common/amdgpu.nix
     ../../common/bluetooth.nix
+    ../../common/docker.nix
     ../../common/fonts.nix
     ../../common/fwupd.nix
     ../../common/gc.nix
