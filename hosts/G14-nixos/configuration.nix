@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -18,7 +18,7 @@
     ../../common/systemd-boot.nix
     ../../common/zsh.nix
     ../../common/displaylink.nix
-    ../../common/qemu.nix
+    ../../common/virt.nix
     ../../users
     ../../users/janle
     ../../users/janle/desktop.nix
