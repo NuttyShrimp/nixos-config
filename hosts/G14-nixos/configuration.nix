@@ -28,13 +28,15 @@
 
   environment.systemPackages = with pkgs; [
     notion
-    rustup
     nextcloud-client
     unstable.jetbrains.datagrip
     unstable.jetbrains.ruby-mine
     libreoffice
     krita
     speedcrunch
+    unstable.borgbackup
+    powertop
+    unstable.rust-analyzer
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -52,13 +54,4 @@
 
   services.tailscale.enable = true;
 
-  boot.loader.systemd-boot.extraEntries = {
-    "arch.conf" = ''
-      title   Arch Linux
-      linux   /boot/vmlinuz-linux
-      initrd  /boot/amd-ucode.img
-      initrd  /boot/initramfs-linux.img
-      options root="UUID=df305880-9944-4046-aef8-1f215aed9dc2"
-    '';
-  };
 }
