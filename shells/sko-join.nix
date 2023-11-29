@@ -2,7 +2,7 @@
   name = "SKO Join";
   imports = [ "${inputs.devshell}/extra/language/ruby.nix" ];
   env = [
-    { name = "DATABASE_HOST"; eval = "$PGDATA"; }
+    { name = "DATABASE_HOST"; eval = "$PRJ_DATA_DIR/postgres"; }
     { name = "PGDATA"; eval = "$PRJ_DATA_DIR/postgres"; }
   ];
   commands = [
