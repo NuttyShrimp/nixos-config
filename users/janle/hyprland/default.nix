@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   imports = [
     ./dunst.nix
@@ -44,9 +44,6 @@
     xdg-desktop-portal-gtk
     dunst
     unstable.waybar
-    swaylock
-    swaylock-effects
-    swayidle
     unstable.polkit_gnome
     lxappearance
     # File manager things
@@ -57,7 +54,42 @@
 
   security.pam.services.swaylock = { };
 
-  home-manager.users.janle = {
+  home-manager.users.janle = let
+  in {
+    programs.swaylock = {
+      enable = true;
+      package = pkgs.swaylock-effects;
+    };
+
+    services.swayidle = {
+      enable = true;
+      systemdTarget = "graphical-session.target";
+      events = [
+        {
+          event = "before-sleep";
+          command = "${pkgs.lib.getExe pkgs.swaylock-effects} -df";
+        }
+        {
+          event = "after-resume";
+          command = "${pkgs.lib.getBin pkgs.hyprland}/binhyprctl dispatch dpms on";
+        }
+        {
+          event = "lock";
+          command = "${pkgs.lib.getExe pkgs.swaylock-effects} -df";
+        }
+      ];
+      timeouts = [
+        {
+          timeout = 900;
+          command = "${pkgs.lib.getExe pkgs.swaylock-effects} -df";
+        }
+        {
+          timeout = 1200;
+          command = "${pkgs.lib.getBin pkgs.hyprland}/bin/hyprctl dispatch dpms off";
+        }
+      ];
+    };
+
     xdg.configFile = {
       "alacritty/alacritty.yml".source = ./alacritty.yml;
       "hypr/hyprland.conf".source = ./hypr/hyprland.conf;
