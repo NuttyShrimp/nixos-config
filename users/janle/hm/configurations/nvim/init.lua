@@ -47,6 +47,8 @@ vim.cmd.syntax(true)
 
 vim.cmd.filetype({ "plugin", "indent", "on" })
 
+vim.env.PATH = vim.fn.stdpath "data" .. "/mason/bin" .. (is_windows and "; " or ":") .. vim.env.PATH
+
 -- Ignore various cache/vendor folders
 vim.opt.wildignore:append({
   "*/node_modules/*",
