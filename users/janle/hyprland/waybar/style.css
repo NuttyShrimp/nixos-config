@@ -129,7 +129,7 @@ window#waybar.hidden {
   margin-top: 7px;
   margin-bottom: 7px;
 
-  font-size: 17px;
+  font-size: 15.5px;
 }
 
 #pulseaudio {
@@ -168,7 +168,6 @@ window#waybar.hidden {
   color: #8fbcbb;
   border-radius: 0px 8px 8px 0px;
   padding-right: 2px;
-  font-size: 19px;
 }
 
 #battery.critical,
@@ -178,7 +177,6 @@ window#waybar.hidden {
   color: #8fbcbb;
   padding-left: 6px;
   padding-right: 12px;
-  font-size: 19px;
 }
 
 #battery.charging { 
