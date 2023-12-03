@@ -37,6 +37,9 @@
     unstable.borgbackup
     powertop
     unstable.rust-analyzer
+    ungoogled-chromium
+    prusa-slicer
+    cachix
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -54,4 +57,9 @@
 
   services.tailscale.enable = true;
 
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [ 8081 ];
+    allowedUDPPorts = [ 8081 ];
+  };
 }
