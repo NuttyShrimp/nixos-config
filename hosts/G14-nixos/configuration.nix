@@ -40,6 +40,7 @@
     ungoogled-chromium
     prusa-slicer
     cachix
+    glib
   ];
 
   nixpkgs.config.allowUnfree = true;

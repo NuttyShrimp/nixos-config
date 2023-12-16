@@ -13,6 +13,9 @@
       tmuxt = "tmux attach -t default || tmux new-session -A -s 0";
     };
     enableAutosuggestions = true;
+    initExtraBeforeCompInit = ''
+      ${builtins.readFile ./zsh/session_variables.zsh}
+    '';
     oh-my-zsh = {
       enable = true;
       plugins = [ "git" ];
