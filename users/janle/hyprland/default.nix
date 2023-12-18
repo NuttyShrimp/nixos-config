@@ -38,7 +38,7 @@
     xwayland
     wdisplays
     wl-clipboard
-    rofi
+    rofi-wayland
     xdg-utils
     xdg-desktop-portal-hyprland
     xdg-desktop-portal-gtk

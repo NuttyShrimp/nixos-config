@@ -41,6 +41,7 @@
     prusa-slicer
     cachix
     glib
+    vlc
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -57,6 +58,17 @@
   networking.hostName = "G14-nixos"; # Define your hostname.
 
   services.tailscale.enable = true;
+
+  services.printing = {
+    enable = true;
+    drivers = with pkgs; [hplipWithPlugin];
+  };
+  services.avahi = {
+    enable = true;
+    nssmdns = true;
+    openFirewall = true;
+  };
+
 
   networking.firewall = {
     enable = true;
