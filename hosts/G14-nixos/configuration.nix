@@ -44,6 +44,8 @@
     vlc
   ];
 
+  programs.direnv.enable = true;
+
   nixpkgs.config.allowUnfree = true;
 
   services.supergfxd.enable = true;
@@ -68,7 +70,6 @@
     nssmdns = true;
     openFirewall = true;
   };
-
 
   networking.firewall = {
     enable = true;

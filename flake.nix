@@ -33,6 +33,7 @@
         nixpkgs.follows = "nixpkgs-unstable";
       };
     };
+    hyprland.url = "github:hyprwm/Hyprland";
   };
 
   outputs =
@@ -44,6 +45,7 @@
     , home-manager-unstable
     , agenix
     , devshell
+    , hyprland
     , ...
     }:
     let
@@ -65,6 +67,7 @@
 
       mkMachine = extraModules:
         nixpkgs.lib.nixosSystem rec {
+          specialArgs = { inherit inputs; };
           system = "x86_64-linux";
           modules = [
             ({ config, ... }: {

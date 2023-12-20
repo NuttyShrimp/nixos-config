@@ -1,9 +1,11 @@
-{ pkgs, lib, ... }:
+{ pkgs, inputs, lib, ... }:
 {
   imports = [
     ./dunst.nix
     ../../../common/pipewire.nix
   ];
+
+  boot.kernelParams = [ "nvidia.NVreg_PreserveVideoMemoryAllocations=1" ];
 
   services.xserver = {
     enable = true;
@@ -26,8 +28,8 @@
 
   programs.hyprland = {
     enable = true;
+    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     xwayland.enable = true;
-    enableNvidiaPatches = true;
   };
 
   security.rtkit.enable = true;
