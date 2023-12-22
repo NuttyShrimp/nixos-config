@@ -57,6 +57,14 @@
 
   security.pam.services.swaylock = { };
 
+  environment.sessionVariables = {
+    _JAVA_AWT_WM_NONREPARENTING="1";
+    XCURSOR_SIZE="16";
+    NIXOS_OZONE_WL = "1";
+    MOZ_ENABLE_WAYLAND = "1";
+  };
+
+
   home-manager.users.janle = let
   in {
     programs.swaylock = {
