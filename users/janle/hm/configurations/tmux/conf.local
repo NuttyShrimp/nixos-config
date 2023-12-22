@@ -1,3 +1,11 @@
+# Own config
+# Splitting move to | and -
+unbind '"'
+unbind %
+
+# Some mouse things when im dumb
+set -g mouse on
+
 # -- windows & pane creation ---------------------------------------------------
 
 # new window retains current path, possible values are:
