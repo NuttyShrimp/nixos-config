@@ -70,6 +70,7 @@
           specialArgs = { inherit inputs; };
           system = "x86_64-linux";
           modules = [
+            ./common
             ({ config, ... }: {
               nixpkgs = {
                 inherit overlays;
@@ -82,7 +83,6 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
             })
-            ./common
           ] ++ extraModules;
         };
 

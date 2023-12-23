@@ -58,65 +58,66 @@
   security.pam.services.swaylock = { };
 
   environment.sessionVariables = {
-    _JAVA_AWT_WM_NONREPARENTING="1";
-    XCURSOR_SIZE="16";
+    _JAVA_AWT_WM_NONREPARENTING = "1";
+    XCURSOR_SIZE = "16";
     NIXOS_OZONE_WL = "1";
     MOZ_ENABLE_WAYLAND = "1";
   };
 
 
-  home-manager.users.janle = let
-  in {
-    programs.swaylock = {
-      enable = true;
-      package = pkgs.swaylock-effects;
-    };
+  home-manager.users.janle =
+    let
+    in {
+      programs.swaylock = {
+        enable = true;
+        package = pkgs.swaylock-effects;
+      };
 
-    services.swayidle = {
-      enable = true;
-      systemdTarget = "graphical-session.target";
-      events = [
-        {
-          event = "before-sleep";
-          command = "${pkgs.lib.getExe pkgs.swaylock-effects} -df";
-        }
-        {
-          event = "after-resume";
-          command = "${pkgs.lib.getBin pkgs.hyprland}/binhyprctl dispatch dpms on";
-        }
-        {
-          event = "lock";
-          command = "${pkgs.lib.getExe pkgs.swaylock-effects} -df";
-        }
-      ];
-      timeouts = [
-        {
-          timeout = 900;
-          command = "${pkgs.lib.getExe pkgs.swaylock-effects} -df";
-        }
-        {
-          timeout = 1200;
-          command = "${pkgs.lib.getBin pkgs.hyprland}/bin/hyprctl dispatch dpms off";
-        }
-      ];
-    };
+      services.swayidle = {
+        enable = true;
+        systemdTarget = "graphical-session.target";
+        events = [
+          {
+            event = "before-sleep";
+            command = "${pkgs.lib.getExe pkgs.swaylock-effects} -df";
+          }
+          {
+            event = "after-resume";
+            command = "${pkgs.lib.getBin pkgs.hyprland}/binhyprctl dispatch dpms on";
+          }
+          {
+            event = "lock";
+            command = "${pkgs.lib.getExe pkgs.swaylock-effects} -df";
+          }
+        ];
+        timeouts = [
+          {
+            timeout = 900;
+            command = "${pkgs.lib.getExe pkgs.swaylock-effects} -df";
+          }
+          {
+            timeout = 1200;
+            command = "${pkgs.lib.getBin pkgs.hyprland}/bin/hyprctl dispatch dpms off";
+          }
+        ];
+      };
 
-    xdg.configFile = {
-      "alacritty/alacritty.yml".source = ./alacritty.yml;
-      "hypr/hyprland.conf".source = ./hypr/hyprland.conf;
-      "hypr/hyprpaper.conf".source = ./hypr/hyprpaper.conf;
-      "hypr/scripts" = {
-        source = ./hypr/scripts;
-        recursive = true;
-      };
-      "rofi" = {
-        source = ./rofi;
-        recursive = true;
-      };
-      "waybar" = {
-        source = ./waybar;
-        recursive = true;
+      xdg.configFile = {
+        "alacritty/alacritty.yml".source = ./alacritty.yml;
+        "hypr/hyprland.conf".source = ./hypr/hyprland.conf;
+        "hypr/hyprpaper.conf".source = ./hypr/hyprpaper.conf;
+        "hypr/scripts" = {
+          source = ./hypr/scripts;
+          recursive = true;
+        };
+        "rofi" = {
+          source = ./rofi;
+          recursive = true;
+        };
+        "waybar" = {
+          source = ./waybar;
+          recursive = true;
+        };
       };
     };
-  };
 }

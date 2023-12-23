@@ -63,7 +63,7 @@
 
   services.printing = {
     enable = true;
-    drivers = with pkgs; [hplipWithPlugin];
+    drivers = with pkgs; [ hplipWithPlugin ];
   };
   services.avahi = {
     enable = true;
