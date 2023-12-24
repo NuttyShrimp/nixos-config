@@ -17,7 +17,6 @@
     ../../common/pipewire.nix
     ../../common/systemd-boot.nix
     ../../common/zsh.nix
-    ../../common/displaylink.nix
     ../../common/virt.nix
     ../../users
     ../../users/janle
