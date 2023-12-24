@@ -43,5 +43,13 @@
 
 
   home-manager.users.janle.home.stateVersion = lib.mkDefault "23.11";
-  system.stateVersion = lib.mkDefault "23.11";
+  system = {
+    autoUpgrade = {
+      enable = true;
+      flake = "github:NuttyShrimp/nixos-config";
+      dates = "weekly";
+      randomizedDelaySec = "10min";
+    };
+    stateVersion = lib.mkDefault "23.11";
+  };
 }
