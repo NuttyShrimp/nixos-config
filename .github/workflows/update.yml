@@ -40,6 +40,9 @@ jobs:
       - run: nix-env --quiet -j8 -iA cachix -f https://cachix.org/api/v1/install
       - run: cachix --version
       - run: cachix authtoken ${{ secrets.CACHIX_AUTH_TOKEN }}
+      - run: cachix use nuttyshrimp
+      - run: cachix use hyprland
+      - run: cachix use nix-community
       - run: nix build -L --no-link .#nixosConfigurations.${{matrix.version}}.config.system.build.toplevel
       - run: nix eval --json .#nixosConfigurations.${{matrix.version}}.config.system.build.toplevel | sed 's/"\(.*\)"/\1/' | cachix push nuttyshrimp
 
