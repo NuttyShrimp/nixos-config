@@ -29,7 +29,6 @@
     notion
     nextcloud-client
     unstable.jetbrains.datagrip
-    unstable.jetbrains.ruby-mine
     libreoffice
     krita
     speedcrunch

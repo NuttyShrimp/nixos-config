@@ -39,6 +39,7 @@
     nodejs
     postgresql_14
     yarn
+    unstable.jetbrains.ruby-mine
   ];
   serviceGroups.server.services = {
     web.command = "rails s -p 3000";
