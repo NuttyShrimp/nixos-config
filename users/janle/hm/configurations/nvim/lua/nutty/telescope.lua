@@ -27,7 +27,7 @@ require('telescope').setup {
   }
 }
 
-require('telescope').load_extension('fzf')
+-- require('telescope').load_extension('fzf')
 
 vim.keymap.set("n", "<leader>xx", "<cmd>TroubleToggle<cr>",
   { silent = true, noremap = true }

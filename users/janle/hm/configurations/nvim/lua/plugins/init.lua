@@ -12,10 +12,10 @@ return {
   {
     'neovim/nvim-lspconfig'
   },
-  -- {
-  --   "nvim-treesitter/nvim-treesitter",
-  --   build = ":TSUpdate",
-  -- },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    dir = require("lazy-nix-helper").get_plugin_path("nvim-treesitter"),
+  },
   {
     'nvim-tree/nvim-web-devicons'
   },
