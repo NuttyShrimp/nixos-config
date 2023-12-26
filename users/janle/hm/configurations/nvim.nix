@@ -19,6 +19,7 @@ in {
       fzf
       fd
       unzip
+      nodejs
     ];
     plugins = with pkgs.vimPlugins; [
       lazy-nix-helper-nvim

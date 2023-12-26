@@ -72,10 +72,7 @@ return {
   },
   {
     "L3MON4D3/LuaSnip",
-    -- follow latest release.
-    version = "2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
-    -- install jsregexp (optional!).
-    build = "make install_jsregexp"
+    version = "2.*",
   },
   {
     'saadparwaiz1/cmp_luasnip'
@@ -138,7 +135,8 @@ return {
     dependencies = { "nvim-lua/plenary.nvim" },
   },
   {
-    'tpope/vim-commentary'
+    'numToStr/Comment.nvim',
+    lazy = false,
   },
   {
     'lewis6991/gitsigns.nvim'
@@ -149,5 +147,12 @@ return {
   {
     'simrat39/rust-tools.nvim',
     dependencies = { 'hrsh7th/nvim-cmp' }
+  },
+  {
+    "zbirenbaum/copilot.lua",
+  },
+  { 'AndreM222/copilot-lualine' },
+  {
+    "zbirenbaum/copilot-cmp",
   }
 }

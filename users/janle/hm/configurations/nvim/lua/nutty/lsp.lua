@@ -51,6 +51,7 @@ local source_mapping = {
   nvim_lsp = "[LSP]",
   nvim_lua = "[Lua]",
   path = "[Path]",
+  copilot = "[Copilot]",
 }
 
 -- Setup nvim-cmp.
@@ -97,6 +98,7 @@ cmp.setup({
   },
 
   sources = cmp.config.sources({
+    { name = "copilot" },
     { name = 'nvim_lsp' },
     { name = 'luasnip' }, -- For luasnip users.
     { name = 'nvim_lua' },

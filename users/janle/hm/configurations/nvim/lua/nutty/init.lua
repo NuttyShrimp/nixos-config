@@ -9,3 +9,7 @@ require('nutty.git')
 require('nutty.todo-comments')
 require('nutty.rust')
 require("nutty.theme")
+require("nutty.copilot")
+
+-- Plugins we just want to init
+require('Comment').setup()
