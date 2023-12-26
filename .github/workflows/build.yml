@@ -23,4 +23,5 @@ jobs:
       - run: cachix use hyprland
       - run: cachix use nix-community
       - run: nix build -L --no-link .#nixosConfigurations.${{matrix.version}}.config.system.build.toplevel
-      - run: nix eval --json .#nixosConfigurations.${{matrix.version}}.config.system.build.toplevel | sed 's/"\(.*\)"/\1/' | cachix push nuttyshrimp
+      - run: nix-store --verify --repair --check-contents
+      - run: nix eval --json .#nixosConfigurations.${{matrix.version}}.config.system.build.toplevel | sed 's/"\(.*\)"/\1/' | cachix push nuttyshrimp -c 12
