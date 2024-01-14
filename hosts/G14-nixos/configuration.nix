@@ -40,6 +40,7 @@
     cachix
     glib
     vlc
+    obs-studio
   ];
 
   programs.direnv.enable = true;
