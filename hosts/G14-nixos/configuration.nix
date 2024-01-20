@@ -40,7 +40,9 @@
     cachix
     glib
     vlc
+    libvlc
     obs-studio
+    btrfs-progs
   ];
 
   programs.direnv.enable = true;
