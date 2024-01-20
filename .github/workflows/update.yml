@@ -55,6 +55,7 @@ jobs:
           name: flake-lock
       - uses: EndBug/add-and-commit@v9
         with:
+          cwd: /_work/docker-srv1/nixos-config/nixos-config
           default_author: github_actions
           message: Update dependencies
 
