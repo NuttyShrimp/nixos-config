@@ -56,6 +56,7 @@
   ];
 
   security.pam.services.swaylock = { };
+  security.pam.services.gdm.enableGnomeKeyring = true;
 
   environment.sessionVariables = {
     _JAVA_AWT_WM_NONREPARENTING = "1";
