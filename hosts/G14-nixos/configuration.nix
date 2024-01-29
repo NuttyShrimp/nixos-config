@@ -43,6 +43,7 @@
     libvlc
     obs-studio
     btrfs-progs
+    unstable.jetbrains.clion
   ];
 
   programs.direnv.enable = true;
