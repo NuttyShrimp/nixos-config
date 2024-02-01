@@ -78,4 +78,19 @@
     allowedTCPPorts = [ 8081 ];
     allowedUDPPorts = [ 8081 ];
   };
+
+  boot.loader.systemd-boot.extraEntries = {
+    "arch.conf" = ''
+      title   Arch Linux
+      linux   /vmlinuz-linux
+      initrd  /initramfs-linux.img
+      options root=UUID=c3383532-647b-4b96-8249-f6b1d7b6f0f5 rw
+    '';
+    "arch-fallback.conf" = ''
+      title   Arch Linux (fallback initramfs)
+      linux   /vmlinuz-linux
+      initrd  /initramfs-linux-fallback.img
+      options root=UUID=c3383532-647b-4b96-8249-f6b1d7b6f0f5 rw
+    '';
+  };
 }
