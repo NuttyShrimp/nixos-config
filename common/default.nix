@@ -3,10 +3,6 @@
   boot.tmp.cleanOnBoot = true;
   security.polkit.enable = true;
 
-  nixpkgs.config = {
-    allowUnfree = true;
-  };
-
   environment.systemPackages = with pkgs; [
     git
     vim
