@@ -44,6 +44,7 @@
     obs-studio
     btrfs-progs
     unstable.jetbrains.clion
+    unstable.teams-for-linux
   ];
 
   programs.direnv.enable = true;
