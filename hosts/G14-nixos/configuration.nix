@@ -85,13 +85,13 @@
       title   Arch Linux
       linux   /vmlinuz-linux
       initrd  /initramfs-linux.img
-      options root=UUID=c3383532-647b-4b96-8249-f6b1d7b6f0f5 rw
+      options root=UUID=5c9baa43-50d1-424b-80fe-9b07c955ddcf rw nvidia-drm.modeset=1
     '';
     "arch-fallback.conf" = ''
       title   Arch Linux (fallback initramfs)
       linux   /vmlinuz-linux
       initrd  /initramfs-linux-fallback.img
-      options root=UUID=c3383532-647b-4b96-8249-f6b1d7b6f0f5 rw
+      options root=UUID=5c9baa43-50d1-424b-80fe-9b07c955ddcf rw nvidia-drm.modeset=1
     '';
   };
 }
