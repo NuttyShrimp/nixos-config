@@ -71,9 +71,11 @@
           system = "x86_64-linux";
           modules = [
             ./common
-            ({ config, ... }: {
+            ({ config, pkgs, ... }: {
               nixpkgs = {
-                inherit overlays;
+                overlays = [
+                  (import ./overlays/visual-paradigm.nix pkgs)
+                ] ++ overlays;
                 config.allowUnfree = true;
               };
             })

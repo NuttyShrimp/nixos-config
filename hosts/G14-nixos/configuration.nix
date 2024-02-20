@@ -45,6 +45,7 @@
     btrfs-progs
     unstable.jetbrains.clion
     unstable.teams-for-linux
+    visual-paradigm
   ];
 
   programs.direnv.enable = true;
