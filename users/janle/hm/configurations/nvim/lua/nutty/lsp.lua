@@ -13,9 +13,9 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 local status, saga = pcall(require, "lspsaga")
 if (not status) then return end
 
-require("lspsaga").setup {
-  server_filetype_map = {
-    typescript = 'typescript'
+saga.setup {
+  symbol_in_winbar = {
+    enable = false,
   }
 }
 vim.keymap.set('n', '<C-j>', '<Cmd>Lspsaga diagnostic_jump_next<CR>', opts)
