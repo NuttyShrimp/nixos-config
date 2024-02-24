@@ -55,7 +55,12 @@
         unstable = import nixpkgs-unstable {
           system = prev.system;
           inherit nixpkgs;
-          config.allowUnfree = true;
+          config = {
+            allowUnfree = true;
+            permittedInsecurePackages = [
+              "electron-25.9.0"
+            ];
+          };
         };
       };
 

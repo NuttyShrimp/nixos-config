@@ -63,6 +63,8 @@
     XCURSOR_SIZE = "16";
     NIXOS_OZONE_WL = "1";
     MOZ_ENABLE_WAYLAND = "1";
+    GDK_SCALE = "1.25";
+  GDK_DPI_SCALE = "0.75";
   };
 
 

@@ -46,11 +46,11 @@
     unstable.jetbrains.clion
     unstable.teams-for-linux
     visual-paradigm
+    unstable.obsidian
   ];
 
   programs.direnv.enable = true;
 
-  nixpkgs.config.allowUnfree = true;
 
   services.supergfxd.enable = true;
   systemd.services.supergfxd.path = [ pkgs.pciutils ];
