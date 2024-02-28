@@ -79,6 +79,8 @@
     enable = true;
     allowedTCPPorts = [ 8081 ];
     allowedUDPPorts = [ 8081 ];
+    # make tailscale exit node work
+    checkReversePath = "loose";
   };
 
   boot.loader.systemd-boot.extraEntries = {
