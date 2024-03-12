@@ -6,6 +6,7 @@
     "$HOME/.go/bin"
     "$HOME/.local/bin"
     "$HOME/.cargo/bin"
+    "$HOME/.dotnet/tools"
   ];
 
   home.packages = with pkgs.unstable; [
