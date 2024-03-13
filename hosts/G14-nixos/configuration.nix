@@ -43,7 +43,6 @@
     libvlc
     obs-studio
     btrfs-progs
-    unstable.jetbrains.clion
     unstable.teams-for-linux
     visual-paradigm
     unstable.obsidian
