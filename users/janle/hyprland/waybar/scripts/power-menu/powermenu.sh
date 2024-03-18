@@ -88,7 +88,7 @@ case ${chosen} in
 		run_cmd --reboot
         ;;
     $lock)
-    swaylock
+    swaylock --clock -S
         ;;
     $suspend)
 		run_cmd --suspend

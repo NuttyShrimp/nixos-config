@@ -57,6 +57,7 @@
 
   security.pam.services.swaylock = { };
   security.pam.services.gdm.enableGnomeKeyring = true;
+  security.pam.services.gdm.gnupg.enable = true;
 
   environment.sessionVariables = {
     _JAVA_AWT_WM_NONREPARENTING = "1";
@@ -82,7 +83,7 @@
         events = [
           {
             event = "before-sleep";
-            command = "${pkgs.lib.getExe pkgs.swaylock-effects} -df";
+            command = "${pkgs.swaylock-effects}/bin/swaylock --clock -S --effect-blur 4x4";
           }
           {
             event = "after-resume";
@@ -90,13 +91,13 @@
           }
           {
             event = "lock";
-            command = "${pkgs.lib.getExe pkgs.swaylock-effects} -df";
+            command = "${pkgs.swaylock-effects}/bin/swaylock --clock -S --effect-blur 4x4";
           }
         ];
         timeouts = [
           {
             timeout = 900;
-            command = "${pkgs.lib.getExe pkgs.swaylock-effects} -df";
+            command = "${pkgs.swaylock-effects}/bin/swaylock --clock -S --effect-blur 4x4";
           }
           {
             timeout = 1200;
