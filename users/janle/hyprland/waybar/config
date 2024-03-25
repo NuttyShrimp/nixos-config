@@ -78,7 +78,7 @@
     },
    "custom/lock": {
        "tooltip" : false,
-       "on-click": "swaylock",
+       "on-click": "swaylock --clock -S --effect-blur 4x4",
        "format" : "",
     },
     "custom/power-menu": {

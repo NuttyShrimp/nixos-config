@@ -88,7 +88,7 @@ case ${chosen} in
 		run_cmd --reboot
         ;;
     $lock)
-    swaylock --clock -S
+    swaylock --clock -S --effect-blur 4x4
         ;;
     $suspend)
 		run_cmd --suspend
