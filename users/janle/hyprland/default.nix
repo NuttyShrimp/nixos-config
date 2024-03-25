@@ -51,6 +51,7 @@
     pcmanfm
     shared-mime-info
     lxmenu-data
+    xwaylandvideobridge
   ];
 
   security.pam.services.swaylock = { };
