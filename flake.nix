@@ -34,6 +34,12 @@
       };
     };
     hyprland.url = "github:hyprwm/Hyprland";
+    nixpkgs-ruby = {
+      url = "github:bobvanderlinden/nixpkgs-ruby";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
   };
 
   outputs =
@@ -46,6 +52,7 @@
     , agenix
     , devshell
     , hyprland
+    , nixpkgs-ruby
     , ...
     }:
     let
@@ -68,6 +75,7 @@
         overlay
         agenix.overlays.default
         devshell.overlays.default
+        nixpkgs-ruby.overlays.default
       ];
 
       mkMachine = extraModules:

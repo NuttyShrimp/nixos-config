@@ -46,7 +46,7 @@
     postgres.command = "pg:start";
   };
   language.ruby = {
-    package = pkgs.ruby_3_2;
+    package = pkgs."ruby-3.2.2";
     nativeDeps = with pkgs; [ libmysqlclient zlib libyaml ];
   };
 }
