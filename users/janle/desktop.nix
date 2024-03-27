@@ -15,16 +15,17 @@
 
     home.packages = with pkgs; [
       ripgrep
+      file
       # comms
       slack
       discord
-      thunderbird
+      unstable.thunderbird
       # browser
       firefox
       # Utilities
       ansible
       evince
-      spotify
+      unstable.spotify
       unstable.vscode
       alacritty
       pavucontrol
