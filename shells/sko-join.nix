@@ -39,7 +39,6 @@
     nodejs
     postgresql_14
     yarn
-    unstable.jetbrains.ruby-mine
   ];
   serviceGroups.server.services = {
     web.command = "rails s -p 3000";
@@ -47,6 +46,6 @@
   };
   language.ruby = {
     package = pkgs."ruby-3.2.2";
-    nativeDeps = with pkgs; [ libmysqlclient zlib libyaml ];
+    nativeDeps = with pkgs; [ libmysqlclient zlib libyaml  ];
   };
 }

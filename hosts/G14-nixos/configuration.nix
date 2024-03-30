@@ -11,6 +11,7 @@
     ../../common/gc.nix
     # ../../common/grub.nix
     ../../common/gpg.nix
+    ../../common/jetbrains.nix
     ../../common/mariadb.nix
     ../../common/networkmanager.nix
     ../../common/nvidia.nix
