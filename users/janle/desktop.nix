@@ -19,7 +19,7 @@
       # comms
       slack
       discord
-      unstable.thunderbird
+      thunderbird
       # browser
       firefox
       # Utilities
