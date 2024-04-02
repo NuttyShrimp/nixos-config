@@ -46,6 +46,6 @@
   };
   language.ruby = {
     package = pkgs."ruby-3.2.2";
-    nativeDeps = with pkgs; [ libmysqlclient zlib libyaml  ];
+    nativeDeps = with pkgs; [ libmysqlclient zlib libyaml ];
   };
 }
