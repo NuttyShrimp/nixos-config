@@ -48,7 +48,7 @@
     unstable.teams-for-linux
     visual-paradigm
     unstable.obsidian
-    unstable.badlion-client
+    unstable.minecraft
   ];
 
   programs.direnv.enable = true;
