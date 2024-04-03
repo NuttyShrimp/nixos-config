@@ -48,6 +48,7 @@
     unstable.teams-for-linux
     visual-paradigm
     unstable.obsidian
+    prismlauncher
   ];
 
   programs.direnv.enable = true;
