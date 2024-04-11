@@ -1,7 +1,7 @@
 { pkgs, inputs, ... }: pkgs.devshell.mkShell {
   name = "12ul-telraam";
   packages = with pkgs; [
-    jetbrains.idea-ultimate
+    #jetbrains.idea-ultimate
     openjdk17
     gradle
     postgresql
