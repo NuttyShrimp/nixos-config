@@ -3,6 +3,7 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ./backup.nix
     ../../common/amdgpu.nix
     ../../common/bluetooth.nix
     ../../common/displaylink.nix
@@ -53,6 +54,7 @@
 
   programs.direnv.enable = true;
 
+  services.openssh.enable = true;
 
   services.supergfxd.enable = true;
   systemd.services.supergfxd.path = [ pkgs.pciutils ];

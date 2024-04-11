@@ -88,11 +88,14 @@
               nixpkgs = {
                 overlays = [
                   (import ./overlays/visual-paradigm.nix pkgs)
+                  (self: super: {
+                    agenix = agenix.packages.${system}.default;
+                  })
                 ] ++ overlays;
                 config.allowUnfree = true;
               };
             })
-            agenix.nixosModules.age
+            agenix.nixosModules.default
             home-manager.nixosModules.home-manager
             ({ config, ... }: {
               home-manager.useGlobalPkgs = true;
