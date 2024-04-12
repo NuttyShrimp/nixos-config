@@ -30,7 +30,7 @@
       monthly = 6;
     };
     compression = "zstd,9";
-    startAt = "daily";
+    startAt = "20:00";
     extraCreateArgs = "--exclude-caches";
     preHook = "mount -t cifs -o \"username=$(cat /run/agenix/nas-user),password=$(cat /run/agenix/nas-pw)\" $(cat /run/agenix/nas-ip) /mnt/truenas";
     postHook = "umount /mnt/truenas";
