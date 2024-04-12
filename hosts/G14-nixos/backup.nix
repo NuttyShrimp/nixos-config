@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 {
   age.identityPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
   age.secrets = {
@@ -32,7 +32,7 @@
     compression = "zstd,9";
     startAt = "20:00";
     extraCreateArgs = "--exclude-caches";
-    preHook = "mount -t cifs -o \"username=$(cat /run/agenix/nas-user),password=$(cat /run/agenix/nas-pw)\" $(cat /run/agenix/nas-ip) /mnt/truenas";
-    postHook = "umount /mnt/truenas";
+    preHook = "${pkgs.mount}/bin/mount -t cifs -o \"username=$(cat /run/agenix/nas-user),password=$(cat /run/agenix/nas-pw)\" $(cat /run/agenix/nas-ip) /mnt/truenas";
+    postHook = "${pkgs.umount}/bin/umount /mnt/truenas";
   };
 }
