@@ -18,6 +18,7 @@
     ../../common/networkmanager.nix
     ../../common/nvidia.nix
     ../../common/pipewire.nix
+    ../../common/obs.nix
     ../../common/systemd-boot.nix
     ../../common/zsh.nix
     ../../common/virt.nix
@@ -44,12 +45,12 @@
     glib
     vlc
     libvlc
-    obs-studio
     btrfs-progs
     unstable.teams-for-linux
     visual-paradigm
     unstable.obsidian
     prismlauncher
+    wireshark
   ];
 
   programs.direnv.enable = true;
