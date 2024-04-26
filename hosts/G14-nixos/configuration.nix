@@ -5,6 +5,7 @@
     ./hardware-configuration.nix
     ./backup.nix
     ../../common/amdgpu.nix
+    ../../common/backup.nix
     ../../common/bluetooth.nix
     ../../common/displaylink.nix
     ../../common/docker.nix
@@ -36,7 +37,6 @@
     libreoffice
     krita
     speedcrunch
-    unstable.borgbackup
     powertop
     unstable.rust-analyzer
     ungoogled-chromium
