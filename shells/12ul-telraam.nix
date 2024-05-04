@@ -4,7 +4,7 @@
     #jetbrains.idea-ultimate
     openjdk17
     gradle
-    postgresql
+    postgresql_16
   ];
   commands = [
     {
