@@ -15,11 +15,11 @@ jobs:
       - run: nix-env --quiet -j8 -iA cachix -f https://cachix.org/api/v1/install
       - run: cachix --version
       - run: cachix authtoken ${{ secrets.CACHIX_AUTH_TOKEN }}
+      - run: echo "experimental-features = nix-command flakes" >> /etc/nix/nix.conf
+      - run: nix-prefetch-url --name displaylink-580.zip "https://www.synaptics.com/sites/default/files/exe_files/2023-08/DisplayLink%20USB%20Graphics%20Software%20for%20Ubuntu5.8-EXE.zip"
       - run: cachix use nuttyshrimp
       - run: cachix use hyprland
       - run: cachix use nix-community
-      - run: echo "experimental-features = nix-command flakes" >> /etc/nix/nix.conf
-      - run: nix-prefetch-url --name displaylink-580.zip "https://www.synaptics.com/sites/default/files/exe_files/2023-08/DisplayLink%20USB%20Graphics%20Software%20for%20Ubuntu5.8-EXE.zip"
       - run: nix build -L --no-link .#nixosConfigurations.${{matrix.version}}.config.system.build.toplevel
       - run: nix-store --verify --repair --check-contents
       - run: echo "experimental-features = nix-command flakes" >> /etc/nix/nix.conf
