@@ -22,7 +22,7 @@ return {
   {
     'nvimdev/lspsaga.nvim',
     dependencies = {
-      'nvim-tree/nvim-web-devicons'      -- optional
+      'nvim-tree/nvim-web-devicons' -- optional
     }
   },
   {
@@ -154,5 +154,6 @@ return {
   { 'AndreM222/copilot-lualine' },
   {
     "zbirenbaum/copilot-cmp",
-  }
+  },
+  { "tpope/vim-rails" }
 }

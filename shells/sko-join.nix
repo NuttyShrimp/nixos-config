@@ -39,6 +39,7 @@
     nodejs
     postgresql_14
     yarn
+    rubyPackages_3_2.solargraph
   ];
   serviceGroups.server.services = {
     web.command = "rails s -p 3000";
