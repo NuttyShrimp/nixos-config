@@ -10,9 +10,18 @@ require('telescope').setup {
       i = { ["<c-t>"] = trouble.open_with_trouble },
       n = { ["<c-t>"] = trouble.open_with_trouble },
     },
+    vimgrep_arguments = {
+      "rg",
+      "--color=never",
+      "--no-heading",
+      "--with-filename",
+      "--line-number",
+      "--column",
+      "--smart-case",
+      "--pcre2",
+    },
   },
   pickers = {
-
     find_files = {
       hidden = true
     },
