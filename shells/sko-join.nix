@@ -4,6 +4,11 @@
   env = [
     { name = "DATABASE_HOST"; eval = "$PRJ_DATA_DIR/postgres"; }
     { name = "PGDATA"; eval = "$PRJ_DATA_DIR/postgres"; }
+    { name = "MSDATA"; eval = "$PRJ_DATA_DIR/mariadb"; }
+    {
+      name = "LD_LIBRARY_PATH";
+      eval = "$LD_LIBRARY_PATH:$LD_LIBRARY_PATH/mariadb";
+    }
   ];
   commands = [
     {
@@ -41,12 +46,8 @@
     yarn
     rubyPackages_3_2.solargraph
   ];
-  serviceGroups.server.services = {
-    web.command = "rails s -p 3000";
-    postgres.command = "pg:start";
-  };
   language.ruby = {
     package = pkgs."ruby-3.2.2";
-    nativeDeps = with pkgs; [ libmysqlclient zlib libyaml ];
+    nativeDeps = with pkgs; [ libmysqlclient zlib libffi openssl libyaml ];
   };
 }
