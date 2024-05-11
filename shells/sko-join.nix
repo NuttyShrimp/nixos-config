@@ -7,7 +7,7 @@
     { name = "MSDATA"; eval = "$PRJ_DATA_DIR/mariadb"; }
     {
       name = "LD_LIBRARY_PATH";
-      eval = "$LD_LIBRARY_PATH:$LD_LIBRARY_PATH/mariadb";
+      eval = "$LD_LIBRARY_PATH:$LD_LIBRARY_PATH/mariadb:${pkgs.stdenv.cc.cc.lib}/lib";
     }
   ];
   commands = [
