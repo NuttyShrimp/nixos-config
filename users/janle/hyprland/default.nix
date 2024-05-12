@@ -30,11 +30,6 @@
     xwayland.enable = true;
   };
 
-  hardware.opengl = {
-    package = pkgs.unstable.mesa.drivers;
-    package32 = pkgs.unstable.pkgsi686Linux.mesa.drivers;
-  };
-
   security.rtkit.enable = true;
 
   environment.systemPackages = with pkgs; [
