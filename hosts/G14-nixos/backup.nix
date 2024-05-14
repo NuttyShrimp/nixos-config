@@ -36,7 +36,7 @@
     preHook = ''
       sleep 60
       ${pkgs.mount}/bin/mount -t cifs -o \"username=$(cat /run/agenix/nas-user),password=$(cat /run/agenix/nas-pw)\" $(cat /run/agenix/nas-ip) /mnt/truenas
-    ''
+    '';
     postHook = ''
       ${pkgs.umount}/bin/umount /mnt/truenas
     '';
