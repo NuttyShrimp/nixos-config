@@ -1,7 +1,6 @@
 { pkgs, ... }:
 {
   services.gvfs.enable = true;
-  services.gnome.gnome-keyring.enable = true;
 
   home-manager.users.janle = {
     imports = [

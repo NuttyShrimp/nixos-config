@@ -55,7 +55,6 @@
   ];
 
   security.pam.services.swaylock = { };
-  security.pam.services.gdm.enableGnomeKeyring = true;
   security.pam.services.gdm.gnupg.enable = true;
 
   environment.sessionVariables = {
