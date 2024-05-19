@@ -26,7 +26,8 @@
 
   programs.hyprland = {
     enable = true;
-    package = pkgs.hyprland;
+    # Not running bleeding edge due some mesa problems
+    package = pkgs.unstable.hyprland; # inputs.hyprland.packages.${pkgs.system}.hyprland;
     xwayland.enable = true;
   };
 

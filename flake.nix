@@ -1,6 +1,21 @@
 {
   description = "Nixos flake configuration";
 
+  nixConfig = {
+    substituters = [
+      "https://cache.nixos.org"
+      "https://nuttyshrimp.cachix.org"
+      "https://nix-community.cachix.org"
+      "https://hyprland.cachix.org"
+    ];
+    trusted-public-keys = [
+      "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
+      "nuttyshrimp.cachix.org-1:Bx7Cieoc0RadRxisOW/32HAWB1icAAFNKOxaIBVUzpg="
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+    ];
+  };
+
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -33,12 +48,45 @@
         nixpkgs.follows = "nixpkgs-unstable";
       };
     };
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     nixpkgs-ruby = {
       url = "github:bobvanderlinden/nixpkgs-ruby";
       inputs = {
         nixpkgs.follows = "nixpkgs";
       };
+    };
+
+    # hyprwm
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+
+    hypridle = {
+      url = "github:hyprwm/hypridle";
+      inputs.hyprlang.follows = "hyprland/hyprlang";
+      inputs.nixpkgs.follows = "hyprland/nixpkgs";
+      inputs.systems.follows = "hyprland/systems";
+    };
+
+    hyprland-contrib = {
+      url = "github:hyprwm/contrib";
+      inputs.nixpkgs.follows = "hyprland/nixpkgs";
+    };
+
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
+
+    hyprlock = {
+      url = "github:hyprwm/hyprlock";
+      inputs.hyprlang.follows = "hyprland/hyprlang";
+      inputs.nixpkgs.follows = "hyprland/nixpkgs";
+      inputs.systems.follows = "hyprland/systems";
+    };
+
+    hyprpaper = {
+      url = "github:hyprwm/hyprpaper";
+      inputs.hyprlang.follows = "hyprland/hyprlang";
+      inputs.nixpkgs.follows = "hyprland/nixpkgs";
+      inputs.systems.follows = "hyprland/systems";
     };
   };
 
@@ -76,7 +124,6 @@
         agenix.overlays.default
         devshell.overlays.default
         nixpkgs-ruby.overlays.default
-        hyprland.overlays.default
       ];
 
       mkMachine = extraModules:
