@@ -76,6 +76,7 @@
         agenix.overlays.default
         devshell.overlays.default
         nixpkgs-ruby.overlays.default
+        hyprland.overlays.default
       ];
 
       mkMachine = extraModules:

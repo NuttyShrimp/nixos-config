@@ -26,14 +26,13 @@
 
   programs.hyprland = {
     enable = true;
-    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+    package = pkgs.hyprland;
     xwayland.enable = true;
   };
 
   security.rtkit.enable = true;
 
   environment.systemPackages = with pkgs; [
-    hyprland
     hyprpaper
     xwayland
     wdisplays
