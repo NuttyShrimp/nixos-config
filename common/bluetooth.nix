@@ -5,6 +5,7 @@
     bluetooth = {
       enable = true;
       powerOnBoot = true;
+      package = pkgs.unstable.bluez;
     };
     pulseaudio = {
       package = pkgs.pulseaudioFull;
@@ -13,6 +14,6 @@
   };
   services.blueman.enable = true;
   environment.systemPackages = with pkgs; [
-    bluez
+    unstable.bluez
   ];
 }
