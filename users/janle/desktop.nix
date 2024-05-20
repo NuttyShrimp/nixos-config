@@ -32,7 +32,8 @@
       tmux
       qimgv
       slurp
-      shotman
+      grim
+      swappy
     ];
   };
 }

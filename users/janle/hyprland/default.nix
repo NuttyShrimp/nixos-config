@@ -116,6 +116,7 @@
           source = ./rofi;
           recursive = true;
         };
+        "swappy/config".source = ./swappy.conf;
         "waybar" = {
           source = ./waybar;
           recursive = true;
