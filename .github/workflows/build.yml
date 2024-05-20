@@ -20,7 +20,7 @@ jobs:
       - run: cachix use nuttyshrimp
       - run: cachix use hyprland
       - run: cachix use nix-community
-      - run: nix build -L --no-link .#nixosConfigurations.${{matrix.version}}.config.system.build.toplevel
+      - run: nix build -L --no-link --accept-flake-config .#nixosConfigurations.${{matrix.version}}.config.system.build.toplevel
       - run: nix-store --verify --repair --check-contents
       - run: echo "experimental-features = nix-command flakes" >> /etc/nix/nix.conf
       - run: nix eval --json .#nixosConfigurations.${{matrix.version}}.config.system.build.toplevel | sed 's/"\(.*\)"/\1/' | cachix push nuttyshrimp -c 12

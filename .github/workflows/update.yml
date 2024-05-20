@@ -13,7 +13,7 @@ jobs:
         with:
           nix_path: nixpkgs=channel:nixos-unstable
           github_access_token: ${{ secrets.GITHUB_TOKEN }}
-      - run: nix flake update
+      - run: nix flake update --accept-flake-config
       - name: Upload lock file
         uses: actions/upload-artifact@v4
         with:
@@ -41,7 +41,7 @@ jobs:
       - run: cachix use nuttyshrimp
       - run: cachix use hyprland
       - run: cachix use nix-community
-      - run: nix build -L --no-link .#nixosConfigurations.${{matrix.version}}.config.system.build.toplevel
+      - run: nix build -L --no-link --accept-flake-config .#nixosConfigurations.${{matrix.version}}.config.system.build.toplevel
       - run: nix-store --verify --repair --check-contents
       - run: echo "experimental-features = nix-command flakes" >> /etc/nix/nix.conf
       - run: nix eval --json .#nixosConfigurations.${{matrix.version}}.config.system.build.toplevel | sed 's/"\(.*\)"/\1/' | cachix push nuttyshrimp -c 12
