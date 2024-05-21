@@ -3,7 +3,7 @@
 {
   programs.gnupg.agent = {
     enable = true;
-    pinentryFlavor = "gtk2";
+    # pinentryFlavor = "gtk2";
   };
 
   environment.systemPackages = [

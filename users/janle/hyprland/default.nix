@@ -105,7 +105,7 @@
       };
 
       xdg.configFile = {
-        "alacritty/alacritty.yml".source = ./alacritty.yml;
+        "alacritty/alacritty.toml".source = ./alacritty.toml;
         "hypr/hyprland.conf".source = ./hypr/hyprland.conf;
         "hypr/hyprpaper.conf".source = ./hypr/hyprpaper.conf;
         "hypr/scripts" = {
