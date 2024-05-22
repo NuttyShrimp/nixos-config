@@ -58,33 +58,6 @@ vim.opt.wildignore:append({
   "*/target/*",
   "*/.git/*",
 })
--- vim.cmd("runtime packages.vim")
-
--- Bootstrap lazy.nvim
--- local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
--- if not vim.loop.fs_stat(lazypath) then
---   vim.fn.system({
---     "git",
---     "clone",
---     "--filter=blob:none",
---     "https://github.com/folke/lazy.nvim.git",
---     "--branch=stable", -- latest stable release
---     lazypath,
---   })
--- end
--- vim.opt.rtp:prepend(lazypath)
--- equire("lazy").setup("plugins", {
---  config = {
---    performance = {
---      reset_packpath = false,
---      rtp = {
---        reset = false
---      }
---    }
---  }
--- )
-
--- require("nutty")
 
 vim.g.go_gopls_enabled = 0
 vim.g.go_doc_keywordprg_enabled = 0
