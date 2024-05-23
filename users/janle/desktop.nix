@@ -33,7 +33,7 @@
       qimgv
       slurp
       grim
-      swappy
+      satty
     ];
   };
 }
