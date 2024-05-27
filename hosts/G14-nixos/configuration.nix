@@ -19,6 +19,7 @@
     ../../common/nvidia.nix
     ../../common/pipewire.nix
     ../../common/obs.nix
+    ../../common/steam.nix
     ../../common/systemd-boot.nix
     ../../common/zsh.nix
     ../../common/virt.nix
