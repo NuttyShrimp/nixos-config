@@ -340,58 +340,6 @@
         "type": "github"
       }
     },
-    "hyprtracker": {
-      "inputs": {
-        "hyprland": [
-          "hyprland"
-        ],
-        "hyprtracker": "hyprtracker_2",
-        "nixpkgs": [
-          "nixpkgs-unstable"
-        ],
-        "systems": [
-          "hyprtracker",
-          "hyprland",
-          "systems"
-        ]
-      },
-      "locked": {
-        "lastModified": 1716879174,
-        "narHash": "sha256-9v63Q7J7gKTqzvsCgGVoSghiaznmKNAsqsXMz6e/mw0=",
-        "owner": "nuttyshrimp",
-        "repo": "hyprtracker",
-        "rev": "8fb5c610248fe9c09c6bd50b2f357e8588ee874a",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nuttyshrimp",
-        "repo": "hyprtracker",
-        "type": "github"
-      }
-    },
-    "hyprtracker_2": {
-      "inputs": {
-        "hyprland": [
-          "hyprtracker",
-          "hyprland"
-        ],
-        "nix-filter": "nix-filter",
-        "nixpkgs": [
-          "hyprtracker",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1,
-        "narHash": "sha256-pjAqvkI6oneDR458WAPfHUZzm4xc65qBdnDa14RLuKM=",
-        "path": "/nix/store/qrfn89f547kv531r2dfy3qgzhm9b8r6h-source/plugin",
-        "type": "path"
-      },
-      "original": {
-        "path": "/nix/store/qrfn89f547kv531r2dfy3qgzhm9b8r6h-source/plugin",
-        "type": "path"
-      }
-    },
     "hyprwayland-scanner": {
       "inputs": {
         "nixpkgs": [
@@ -414,21 +362,6 @@
       "original": {
         "owner": "hyprwm",
         "repo": "hyprwayland-scanner",
-        "type": "github"
-      }
-    },
-    "nix-filter": {
-      "locked": {
-        "lastModified": 1710156097,
-        "narHash": "sha256-1Wvk8UP7PXdf8bCCaEoMnOT1qe5/Duqgj+rL8sRQsSM=",
-        "owner": "numtide",
-        "repo": "nix-filter",
-        "rev": "3342559a24e85fc164b295c3444e8a139924675b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "nix-filter",
         "type": "github"
       }
     },
@@ -526,7 +459,6 @@
         "home-manager": "home-manager_2",
         "home-manager-unstable": "home-manager-unstable",
         "hyprland": "hyprland",
-        "hyprtracker": "hyprtracker",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-ruby": "nixpkgs-ruby",

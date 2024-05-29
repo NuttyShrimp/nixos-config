@@ -57,13 +57,6 @@
 
     # hyprwm
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
-    hyprtracker = {
-      url = "github:nuttyshrimp/hyprtracker";
-      inputs = {
-        hyprland.follows = "hyprland";
-        nixpkgs.follows = "nixpkgs-unstable";
-      };
-    };
   };
 
   outputs =
