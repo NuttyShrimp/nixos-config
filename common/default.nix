@@ -38,7 +38,7 @@
   i18n.defaultLocale = lib.mkDefault "en_GB.UTF-8";
 
 
-  home-manager.users.janle.home.stateVersion = lib.mkDefault "23.11";
+  home-manager.users.janle.home.stateVersion = lib.mkDefault "24.05";
   system = {
     autoUpgrade = {
       enable = true;
@@ -46,6 +46,6 @@
       dates = "weekly";
       randomizedDelaySec = "10min";
     };
-    stateVersion = lib.mkDefault "23.11";
+    stateVersion = lib.mkDefault "24.05";
   };
 }

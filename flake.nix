@@ -17,7 +17,7 @@
   };
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:nixos/nixos-hardware";
     flake-utils.url = "github:numtide/flake-utils";
@@ -25,15 +25,9 @@
       url = "github:gytis-ivaskevicius/flake-utils-plus";
     };
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/release-24.05";
       inputs = {
         nixpkgs.follows = "nixpkgs";
-      };
-    };
-    home-manager-unstable = {
-      url = "github:nix-community/home-manager/master";
-      inputs = {
-        nixpkgs.follows = "nixpkgs-unstable";
       };
     };
     agenix = {
@@ -65,7 +59,6 @@
     , nixos-hardware
     , flake-utils
     , home-manager
-    , home-manager-unstable
     , agenix
     , devshell
     , hyprland
