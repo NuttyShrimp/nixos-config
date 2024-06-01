@@ -31,7 +31,6 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    notion
     nextcloud-client
     unstable.jetbrains.datagrip
     libreoffice

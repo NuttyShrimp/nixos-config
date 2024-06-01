@@ -6,7 +6,7 @@
     "$HOME/.go/bin"
     "$HOME/.local/bin"
     "$HOME/.cargo/bin"
-    "$HOME/.dotnet/tools"
+    "$HOME/.local/share/JetBrains/Toolbox/scripts"
   ];
 
   home.packages = with pkgs.unstable; [
@@ -18,5 +18,7 @@
     wget
     fzf
     unzip
+    zip
+    ncdu
   ];
 }
