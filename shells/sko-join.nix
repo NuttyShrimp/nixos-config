@@ -44,7 +44,6 @@
     nodejs
     postgresql_14
     yarn
-    rubyPackages_3_2.solargraph
   ];
   language.ruby = {
     package = pkgs."ruby-3.2.2";
