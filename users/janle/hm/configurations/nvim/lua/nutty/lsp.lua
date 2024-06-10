@@ -141,6 +141,8 @@ cmp.setup.cmdline(':', {
     })
 })
 
+vim.filetype.add({ extension = { templ = "templ" } })
+
 local lsp_servers = { "tsserver", "gopls", "html", "vimls", "jsonls", "eslint", "pyright", "volar", "cssls", "prismals",
   "svelte", "solargraph", "lua_ls", "golangci_lint_ls", "sqlls", "tailwindcss",
   "ansiblels", "nil_ls", "ccls", "templ" }
