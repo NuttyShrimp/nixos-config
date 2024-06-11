@@ -7,6 +7,7 @@
     yubico-pam
     yubikey-manager
     yubikey-personalization
+    yubioath-flutter
   ];
 
   services.pcscd.enable = true;

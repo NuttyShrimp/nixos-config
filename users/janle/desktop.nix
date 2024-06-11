@@ -34,6 +34,7 @@
       slurp
       grim
       swappy
+      git-crypt
     ];
   };
 }
