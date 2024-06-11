@@ -51,6 +51,7 @@
     unstable.obsidian
     prismlauncher
     wireshark
+    xournalpp
   ];
 
   programs.direnv.enable = true;
