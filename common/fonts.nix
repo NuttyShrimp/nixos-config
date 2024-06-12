@@ -23,6 +23,7 @@
           "JetBrainsMono"
         ];
       })
+      berkeley-mono
     ];
     fontconfig = {
       enable = true;

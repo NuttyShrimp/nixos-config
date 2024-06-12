@@ -37,21 +37,37 @@ TERM = "xterm-256color"
 [font]
 size = 11
 
+# [font.bold]
+# family = "FiraCode Nerd Font Mono"
+# style = "Bold"
+#
+# [font.bold_italic]
+# family = "FiraCode Nerd Font Mono"
+# style = "Bold Italic"
+#
+# [font.italic]
+# family = "FiraCode Nerd Font Mono"
+# style = "Italic"
+#
+# [font.normal]
+# family = "FiraCode Nerd Font Mono"
+# style = "Medium"
+
 [font.bold]
-family = "FiraCode Nerd Font Mono"
+family = "BerkeleyMono Nerd Font"
 style = "Bold"
 
 [font.bold_italic]
-family = "FiraCode Nerd Font Mono"
+family = "BerkeleyMono Nerd Font"
 style = "Bold Italic"
 
 [font.italic]
-family = "FiraCode Nerd Font Mono"
+family = "BerkeleyMono Nerd Font"
 style = "Italic"
 
 [font.normal]
-family = "FiraCode Nerd Font Mono"
-style = "Medium"
+family = "BerkeleyMono Nerd Font"
+style = "Regular"
 
 [window]
 decorations = "full"

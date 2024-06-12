@@ -98,6 +98,7 @@
               nixpkgs = {
                 overlays = [
                   (import ./overlays/visual-paradigm.nix pkgs)
+                  (import ./overlays/berkeley_mono.nix pkgs)
                   (self: super: {
                     agenix = agenix.packages.${system}.default;
                   })
