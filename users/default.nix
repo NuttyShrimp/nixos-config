@@ -15,6 +15,7 @@
     group = "janle";
   };
 
+  home-manager.backupFileExtension = "backup";
   home-manager.users = {
     janle = (import ./janle/hm/base.nix);
   };
