@@ -5,7 +5,7 @@ vim.opt.runtimepath:append(parser_install_dir)
 require('nvim-treesitter.configs').setup({
   sync_install = true,
   auto_install = true,
-  highlight = { enable = true, disable = { "rust" } },
+  highlight = { enable = true },
   incremental_selection = { enable = true },
   textobjects = { enable = true },
   parser_install_dir = parser_install_dir
