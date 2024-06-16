@@ -6,7 +6,7 @@
     ./backup.nix
     ../../common/amdgpu.nix
     ../../common/bluetooth.nix
-    #../../common/displaylink.nix
+    ../../common/displaylink.nix
     ../../common/docker.nix
     ../../common/fonts.nix
     ../../common/fwupd.nix
@@ -26,7 +26,8 @@
     ../../users
     ../../users/janle
     ../../users/janle/desktop.nix
-    ../../users/janle/hyprland
+    # ../../users/janle/hyprland
+    ../../users/janle/sway
     ../../users/janle/yubikey.nix
   ];
 

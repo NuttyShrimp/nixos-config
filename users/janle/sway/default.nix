@@ -1,31 +1,23 @@
-{ pkgs, inputs, lib, ... }:
+{ pkgs, ... }:
 {
   imports = [
-    ./dunst.nix
     ../wayland
   ];
 
   xdg.portal.wlr.enable = true;
-
-  programs.hyprland = {
+  
+  programs.sway = {
     enable = true;
-    xwayland.enable = true;
-    package = pkgs.hyprland-displaylink;
-    portalPackage = pkgs.xdg-desktop-portal-hyprland-displaylink;
-    # plugins = [
-    #   inputs.hyprtracker.packages.${pkgs.system}.hyprtracker
-    # ];
+    wrapperFeatures.gtk = true;
+    package = pkgs.sway-displaylink;
+    extraOptions = ["--unsupported-gpu"];
   };
 
   environment.systemPackages = with pkgs; [
-    hyprpaper
+    swaybg
   ];
 
-  security.pam.services.swaylock = { };
-
-  home-manager.users.janle =
-    let
-    in {
+  home-manager.users.janle = {
       programs.swaylock = {
         enable = true;
         package = pkgs.swaylock-effects;
@@ -61,10 +53,9 @@
       };
 
       xdg.configFile = {
-        "hypr/hyprland.conf".source = ./hypr/hyprland.conf;
-        "hypr/hyprpaper.conf".source = ./hypr/hyprpaper.conf;
-        "hypr/scripts" = {
-          source = ./hypr/scripts;
+        "sway/config".source = ./sway/config;
+        "sway/scripts" = {
+          source = ./sway/scripts;
           recursive = true;
         };
       };

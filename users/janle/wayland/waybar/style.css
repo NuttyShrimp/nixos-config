@@ -27,6 +27,7 @@ window#waybar.hidden {
 #mode,
 #custom-lock,
 #workspaces,
+#window,
 #idle_inhibitor,
 #custom-power-menu,
 #custom-launcher,
@@ -84,18 +85,18 @@ window#waybar.hidden {
 
 #workspaces button:hover {
   color: #ecd3a0;
-  background: rgba(0,0,0,0);
+  background: rgba(0, 0, 0, 0);
   padding: 0 2px;
   margin: 0em;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
-.modules-left > widget:first-child > #workspaces {
+.modules-left>widget:first-child>#workspaces {
   margin-left: 0;
 }
 
 /* If workspaces is the rightmost module, omit right margin */
-.modules-right > widget:last-child > #workspaces {
+.modules-right>widget:last-child>#workspaces {
   margin-right: 0;
 }
 
@@ -179,7 +180,7 @@ window#waybar.hidden {
   padding-right: 12px;
 }
 
-#battery.charging { 
+#battery.charging {
   font-size: 15px;
   padding-right: 13px;
   padding-left: 4px;
@@ -254,11 +255,11 @@ label:focus {
   font-size: 27px;
 }
 
-#tray > .passive {
+#tray>.passive {
   -gtk-icon-effect: dim;
 }
 
-#tray > .needs-attention {
+#tray>.needs-attention {
   -gtk-icon-effect: highlight;
   background-color: #eb4d4b;
 }

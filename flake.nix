@@ -68,7 +68,7 @@
     let
       # pkgs = nixpkgs.legacyPackages."x86_64-linux";
 
-      overlay = final: prev: {
+      unstable_overlay = final: prev: {
         unstable = import nixpkgs-unstable {
           system = prev.system;
           inherit nixpkgs;
@@ -82,7 +82,7 @@
       };
 
       overlays = [
-        overlay
+        unstable_overlay
         agenix.overlays.default
         devshell.overlays.default
         nixpkgs-ruby.overlays.default
@@ -94,11 +94,12 @@
           system = "x86_64-linux";
           modules = [
             ./common
-            ({ config, pkgs, ... }: {
+            ({ config, pkgs, lib, ... }: {
               nixpkgs = {
                 overlays = [
                   (import ./overlays/visual-paradigm.nix pkgs)
                   (import ./overlays/berkeley_mono.nix pkgs)
+                  (import ./overlays/displaylink.nix { inherit pkgs inputs lib; })
                   (self: super: {
                     agenix = agenix.packages.${system}.default;
                   })
