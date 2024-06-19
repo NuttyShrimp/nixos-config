@@ -155,5 +155,6 @@ return {
   {
     "zbirenbaum/copilot-cmp",
   },
-  { "tpope/vim-rails" }
+  { "tpope/vim-rails" },
+  { "catppuccin/nvim",          name = "catppuccin", priority = 1000 }
 }
