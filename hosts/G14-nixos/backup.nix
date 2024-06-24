@@ -17,7 +17,12 @@
     ];
     exclude = [
       "/home/*/.cache/*"
+      "/home/*/gradle/caches/*"
+      "/home/*/Android/*"
+      "/home/janle/.local/share/Steam/*"
       "/var/tmp/*"
+      "/var/run/*"
+      "/var/cache/*"
     ];
     repo = "/mnt/truenas/backups/g14-nixos";
     encryption = {
@@ -32,7 +37,9 @@
     compression = "zstd,9";
     startAt = "20:00";
     persistentTimer = true;
-    extraCreateArgs = "--exclude-caches";
+    extraCreateArgs = "--exclude-caches --stats";
+    readWritePaths = ["/run/agenix"];
+    doInit = false;
     preHook = ''
       sleep 60
       ${pkgs.mount}/bin/mount -t cifs -o "username=$(cat /run/agenix/nas-user),password=$(cat /run/agenix/nas-pw)" $(cat /run/agenix/nas-ip) /mnt/truenas
