@@ -2,7 +2,7 @@ pkgs: self: super:
 let
   visual-paradigm = { stdenv, lib, fetchurl, pkgs, patchelf }:
     let
-      version = "17.1";
+      version = "17.2";
       src = fetchurl {
         name = "visual-paradigm.tar.gz";
         url = "https://www.visual-paradigm.com/downloads/${version}/vp/Visual_Paradigm_Linux64_InstallFree.tar.gz";
