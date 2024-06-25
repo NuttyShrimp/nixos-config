@@ -6,7 +6,7 @@ let
       src = fetchurl {
         name = "visual-paradigm.tar.gz";
         url = "https://www.visual-paradigm.com/downloads/${version}/vp/Visual_Paradigm_Linux64_InstallFree.tar.gz";
-        sha256 = "sha256-S5kdfIJt9BrIQQkzYSOVLNHWCYxqcvhLTu7XmGa0W9Y=";
+        sha256 = "sha256-qM1zDmbtyoykFsae3FM0UUbssWN2GCPd2IE036q47HM=";
       };
 
     in
