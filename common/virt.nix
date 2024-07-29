@@ -10,10 +10,10 @@
   '';
 
   # virtualbox
-  virtualisation.virtualbox.host = {
-    enable = true;
-    enableExtensionPack = true;
-    package = pkgs.unstable.virtualbox;
-  };
-  users.extraGroups.vboxusers.members = [ "janle" ];
+  # virtualisation.virtualbox.host = {
+  #   enable = true;
+  #   enableExtensionPack = true;
+  #   package = pkgs.unstable.virtualbox;
+  # };
+  # users.extraGroups.vboxusers.members = [ "janle" ];
 }
