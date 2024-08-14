@@ -32,7 +32,7 @@ vim.keymap.set('n', 'ga', '<Cmd>Lspsaga code_action<CR>', opts)
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
-local o_attach = function(client, bufnr)
+local on_attach = function(client, bufnr)
   -- Enable completion triggered by <c-x><c-o>
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
@@ -154,7 +154,7 @@ require("mason-lspconfig").setup({
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers_to_skip = { lua_ls = true, eslint = true }
+local servers_to_skip = { lua_ls = true, eslint = true, tsserver = true, volar = true, }
 for _, lsp in ipairs(lsp_servers) do
   if servers_to_skip[lsp] then goto continue end
   require('lspconfig')[lsp].setup {
@@ -211,6 +211,30 @@ require('lspconfig').eslint.setup {
       mode = "all"
     },
   }
+}
+
+require("lspconfig").tsserver.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  init_options = {
+    plugins = {
+      {
+        name = '@vue/typescript-plugin',
+        location = '/home/janle/.local/share/nvim/mason/bin/vue-language-server',
+        languages = { 'vue' },
+      },
+    },
+  },
+}
+
+require("lspconfig").volar.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  init_options = {
+    vue = {
+      hybridMode = false,
+    },
+  },
 }
 
 require "fidget".setup {}

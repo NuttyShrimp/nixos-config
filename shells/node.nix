@@ -1,4 +1,4 @@
 { pkgs, ... }: pkgs.devshell.mkShell {
-  name = "12ul-count";
+  name = "node";
   packages = with pkgs; [ nodejs nodePackages.yarn nodePackages.pnpm ];
 }
