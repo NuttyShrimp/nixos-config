@@ -53,6 +53,7 @@
     prismlauncher
     wireshark
     xournalpp
+    rquickshare
   ];
 
   programs.direnv.enable = true;
