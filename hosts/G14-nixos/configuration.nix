@@ -54,6 +54,7 @@
     wireshark
     xournalpp
     rquickshare
+    mattermost-desktop
   ];
 
   programs.direnv.enable = true;
