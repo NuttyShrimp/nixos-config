@@ -4,11 +4,6 @@
   env = [
     { name = "DATABASE_HOST"; eval = "$PRJ_DATA_DIR/postgres"; }
     { name = "PGDATA"; eval = "$PRJ_DATA_DIR/postgres"; }
-    { name = "MSDATA"; eval = "$PRJ_DATA_DIR/mariadb"; }
-    {
-      name = "LD_LIBRARY_PATH";
-      eval = "$LD_LIBRARY_PATH:$LD_LIBRARY_PATH/mariadb:${pkgs.stdenv.cc.cc.lib}/lib";
-    }
   ];
   commands = [
     {
@@ -42,11 +37,11 @@
   ];
   packages = with pkgs; [
     nodejs
-    postgresql_14
+    postgresql_16
     yarn
   ];
   language.ruby = {
-    package = pkgs."ruby-3.3.2";
-    nativeDeps = with pkgs; [ libmysqlclient zlib libffi openssl libyaml postgresql_14 ];
+    package = pkgs."ruby-3.3.4";
+    nativeDeps = with pkgs; [ libmysqlclient zlib libffi openssl libyaml postgresql_16 ];
   };
 }
