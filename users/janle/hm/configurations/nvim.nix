@@ -8,6 +8,7 @@ in
 {
   programs.neovim = {
     enable = true;
+    package = pkgs.unstable.neovim-unwrapped;
     vimAlias = true;
     vimdiffAlias = true;
     extraPackages = with pkgs; [
