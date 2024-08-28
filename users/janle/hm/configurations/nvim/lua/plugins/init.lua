@@ -157,7 +157,5 @@ return {
     "zbirenbaum/copilot-cmp",
   },
   { "tpope/vim-rails" },
-  { "RRethy/base16-nvim" },
-  { "sainnhe/edge" },
-  { "ellisonleao/gruvbox.nvim" }
+  { "tiagovla/tokyodark.nvim",  priority = 1000 }
 }
