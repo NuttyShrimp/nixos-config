@@ -220,21 +220,22 @@ require("lspconfig").tsserver.setup {
     plugins = {
       {
         name = '@vue/typescript-plugin',
-        location = '/home/janle/.local/share/nvim/mason/bin/vue-language-server',
+        location = '/home/janle/.local/share/nvim/mason/packages/vue-language-server/node_modules/@vue/language-server/node_modules/@vue/typescript-plugin',
         languages = { 'vue' },
       },
     },
   },
+  filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
 }
 
 require("lspconfig").volar.setup {
   on_attach = on_attach,
   capabilities = capabilities,
-  init_options = {
-    vue = {
-      hybridMode = false,
-    },
-  },
+  -- init_options = {
+  --   vue = {
+  --     hybridMode = false,
+  --   },
+  -- },
 }
 
 require "fidget".setup {}
