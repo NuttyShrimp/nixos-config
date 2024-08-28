@@ -100,6 +100,7 @@ return {
   -- { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
   {
     "folke/trouble.nvim",
+    cmd = "Trouble",
     dependencies = { "nvim-tree/nvim-web-devicons" },
   },
   {
@@ -156,5 +157,7 @@ return {
     "zbirenbaum/copilot-cmp",
   },
   { "tpope/vim-rails" },
-  { "catppuccin/nvim",          name = "catppuccin", priority = 1000 }
+  { "RRethy/base16-nvim" },
+  { "sainnhe/edge" },
+  { "ellisonleao/gruvbox.nvim" }
 }
