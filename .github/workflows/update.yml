@@ -1,8 +1,8 @@
 name: "Update systems"
 on:
   workflow_dispatch: # allows manual triggering
-  schedule:
-    - cron: '0 4 * * *'
+  # schedule:
+  #   - cron: '0 4 * * *'
 
 jobs:
   update-lock-file:
